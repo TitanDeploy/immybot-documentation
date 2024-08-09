@@ -3,36 +3,63 @@
 
 Please see the [FAQ section for more details](https://docs.immy.bot/FAQ.html#what-windows-versions-does-immyagent-support)
 :::
-# Frequently Asked Questions
 
-## What is the difference between the Starter and Standard plan?
+<h1>Frequently Asked Questions</h1>
+<div>
+    <Details>
+        <Summary>
+            <h2>What is the difference between the Starter and Standard plan?</h2>
+        </Summary>
+        <li>Both plans allow you to import all of your existing agents into ImmyBot if you use one of our support integrations.</li>
+        <li>Both plans allow installing and updating of the ImmyBot agent on all of your existing computers.</li>
+        <li>Both plans allow running maintenance on all of your computers given that the computer was imported into ImmyBot in the last 7 days.</li>
+    </Details>
+</div>
 
-Both plans allow you to import all of your existing agents into ImmyBot if you use one of our support integrations.
-
-Both plans allow installing and updating of the ImmyBot agent on all of your existing computers.
-
-Both plans allow running maintenance on all of your computers given that the computer was imported into ImmyBot in the last 7 days.
-
-### Starter
-
+<div>
+    <Details>
+        <Summary>
+            <h2>Starter</h2>
+        </Summary>
+        <p>
+    
 Starter does not charge maintenance per computer since it does not support ongoing maintenance for your computers.
 
 Once a computer has been in ImmyBot for at least 7 days, maintenance can no longer be executed against it. This includes all onboarding, full maintenance, and adhoc sessions. If you need to manage ongoing maintenance against a computer older than 7 days, then you will need to upgrade to Standard.
+        </p>
+    </Details>
+</div>
 
-### Standard
+<div>
+    <Details>
+        <Summary>
+            <h2>Standard</h2>
+        </Summary>
+        <p>Standard charges per maintained computer since it supports ongoing maintenance.</p>
+    </Details>
+</div>
 
-Standard charges per maintained computer since it supports ongoing maintenance.
-
-#### What is a maintained computer?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>What is a maintained computer?</h2>
+        </Summary>
+        <p>
 Since we allow you to import all of your agents into ImmyBot, we don't simply charge per agent.
 
 Instead, we only consider computers that have received ongoing maintenance.
 
 A computer has received ongoing maintenance if an onboarding, full maintenance, or adhoc session has been run against it after the computer has been in ImmyBot for over 7 days.
+        </p>
+    </Details>
+</div>
 
-#### Maintenance per computer
-
+<div>
+    <Details>
+        <Summary>
+            <h2>Maintenance per computer</h2>
+        </Summary>
+        <p>
 When maintenance is performed against a computer older than 7 days, ImmyBot will check the following:
 
 1) Is this computer already counted towards your maintained count?
@@ -44,36 +71,79 @@ When maintenance is performed against a computer older than 7 days, ImmyBot will
     - If it is not, then this computer will be added to your active maintained computer count, and maintenance can be performed on this computer.
 
 When a subscription is at the maximum maintained count, only maintenance for computers considered in the count will be allowed. In order to run maintenance on other computers, you can purchase more computer licenses for your subscription.
+        </p>
+    </Details>
+</div>
 
-## Do I need a separate USB/Installer per tenant?
+<div>
+    <Details>
+        <Summary>
+            <h2>Do I need a separate USB/Installer per tenant?</h2>
+        </Summary>
+        <p>
 No. Create a USB pointing to your own tenant (or create an “Onboarding” tenant) and don’t select the Auto-Onboard option.
 
 You will change the tenant of the computer on the Onboarding area of the computer after it comes into New Computers
+        </p>
+    </Details>
+</div>
 
-## Will ImmyBot start doing anything without my consent? Like when I save a deployment, will it automatically deploy?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>Will ImmyBot start doing anything without my consent? Like when <br>I save a deployment, will it automatically deploy?</h2>
+        </Summary>
+        <p>
 ImmyBot does not deploy anything automatically. You can feel safe saving your Deployments. Think of them like documenting how things SHOULD be. If you want Immy to automatically enforce deployments, you would need the Immy Deploy plan which allows you to create schedules.
 
 Think of it like if Group Policy only updated if you manually ran gpupdate /force or otherwise specified a schedule for the gpupdates to happen. We understand that updating and installing software on existing computers can be intrusive to the user which is why we schedule these actions out and give the user the ability to postpone via interactive emails.
 
-IMPORTANT: If you setup integration with your RMM, when you map an RMM client to an ImmyBot tenant, ImmyBot will begin running inventory scripts on those machines every 24 hours. These scripts are read-only, but if you have aggressive monitoring software it may cause false alarms.
+## :warning: IMPORTANT: If you setup integration with your RMM, when you map an RMM client to an ImmyBot tenant, ImmyBot will begin running inventory scripts on those machines every 24 hours. These scripts are read-only, but if you have aggressive monitoring software it may cause false alarms.
+</p>
+    </Details>
+</div>
 
-## What if I don’t know which user will be using the computer?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>What if I don’t know which user will be using the computer?</h2>
+        </Summary>
+        <p>
 Do your best to find out, or assign machines to specific users ahead of time. Without this, user level customizations are impossible. However, you may find yourself in a shared-computer scenario where every computer gets the same 365 applications. Simply create a deployment for those 365 applications for all computers under that tenant.
+        </p>
+    </Details>
+</div>
 
-## Can Immy join AzureAD?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>Can Immy join AzureAD?</h2>
+        </Summary>
+        <p>
 Yes. Create a deployment for the Join AzureAD task. We use the bulk enrollment technique and generate a provisioning package to join the machine to AzureAD. At the time of writing, this requires you to create a user in each customer’s tenant. We plan to remove this requirement in the future.
+        </p>
+    </Details>
+</div>
 
-## My AzureAD Join action is failing, what are some common fixes?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>My AzureAD Join action is failing, what are some common fixes?</h2>
+        </Summary>
+        <p>
 Check if MFA Requirement for Joining is enabled via [Conditional Access](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies) or [Azure Device Settings](https://portal.azure.com/#view/Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings/menuId~/null).
 MFA requirement for all users in [Conditional Access](https://portal.azure.com/#view/Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies) will also block the execution, as the package_XXX user will encounter a MFA prompt.
 Most other situations are noted during execution failure.
+        </p>
+    </Details>
+</div>
 
-## What Windows versions does ImmyAgent support?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>What Windows versions does ImmyAgent support?</h2>
+        </Summary>
+        <p>
 The ImmyAgent is written in .NET, and as such supports the same [Windows versions the .NET runtime supports](https://github.com/dotnet/core/blob/main/release-notes/8.0/supported-os.md).
 **Currently, the ImmyAgent runs on .NET 7 and therefore supports Win7+ devices. However, support for .NET 7 is ending May 14th, 2024.**
 After May 14th, Immybot will be transitioning the Agent to the .NET 8 runtime. Win7 is not officially supported in .NET 8, and as such will no longer be supported in ImmyBot.
@@ -82,40 +152,64 @@ Older systems may continue to work inside of ImmyBot with necessary updates appl
 ::: danger
 We do not endorse Legacy Update or similar tools. The best thing to do is upgrade the system. Use at your own risk.
 :::
+        </p>
+    </Details>
+</div>
 
-## Can Immy make deploying via Intune more simple?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>Can Immy make deploying via Intune more simple?</h2>
+        </Summary>
+        <p>
 Absolutely! There is a global [Task](#task) labeled "**Deploy ImmyAgent to Intune**" that can do an excellent job of it.
 - Ensure you are using the [**Custom** Graph Permissions](https://docs.immy.bot/azure-graph-permissions-setup.html#custom)
 - Ensure you have added the Graph **Application** permission DeviceManagementConfiguration.ReadWrite.All to your app registration
 - Ensure you have re-consented to your linked tenants with your new Custom registration
 - If there is a failure of the deployment, there is likely a permissions issue with the app registration
+        </p>
+    </Details>
+</div>
 
-## Can Immy help migrate my customers to AzureAD from On-Premises environments?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>Can Immy help migrate my customers to AzureAD from On-Premises environments?</h2>
+        </Summary>
+        <p>
 Yes, we have a [Task](#task) that can migrate machines to associate the user’s profile to their Azure AD identity and join the machine to Azure AD. It can also do the same to and from Active Directory
+        </p>
+    </Details>
+</div>
 
-## Domain Join didn’t work, what gives?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>Domain Join didn’t work, what gives?</h2>
+        </Summary>
+        <p>
 Make sure there is a Domain Controller in Immy for the machine. If you are using a supported RMM like CW Automate/Control setup the integration so the Domain Controller is imported automatically. Otherwise, you’ll need to install the ImmyAgent on a domain controller for that customer.
 
 If the Domain Controller doesn’t have the red “Domain Controller” designation, press “Run Inventory”. This may happen if it was recently added to ImmyBot.
 
 Pay attention to the script output, Immy may be reporting that there is a name collision, or that it was unable to run scripts on the domain controller, usually due to security software.
+        </p>
+    </Details>
+</div>
 
-## Why are my computers stuck in [Identification](#identification)
+<Details><Summary><h2>Why are my computers stuck in [Identification](#identification)</h2></Summary>
 
 1. The machine has a security tool like Defender for Endpoint, Crowdstrike, Bitdefender or Threatlocker blocking our scripts from running
 
 - You'll want to create exclusions for ImmyBot
 
-1. WMI is broken on the machine (Usually on older machines)
+1. WMI is broken on the machine (Usually on older machines)</Details>
 
-## Can you target devices in Azure Groups?
+<Details><Summary><h2>Can you target devices in Azure Groups?</h2></Summary>
 
-Yes, but ImmyBot requires an additional permission on the ImmyBot app registration. You need to grant the `Microsoft Graph - Devices.Read.All` permission in order for devices to be pulled from Azure Groups.
+Yes, but ImmyBot requires an additional permission on the ImmyBot app registration. You need to grant the `Microsoft Graph - Devices.Read.All` permission in order for devices to be pulled from Azure Groups.</Details>
 
-## How do I uninstall the ImmyAgent?
+<Details><Summary><h2>How do I uninstall the ImmyAgent?</h2></Summary>
 Create a deployment for the "ImmyBot Agent" and set software should be to "Uninstalled"
 
 ![image](https://github.com/immense/immybot-documentation/assets/95599350/02be5654-7393-4f95-bf56-dde089582ccf)
@@ -136,61 +230,61 @@ $product.IdentifyingNumber
 
 msiexec /x $product.IdentifyingNumber /quiet /noreboot
 ```
+</Details>
 
-
-## How/are we able to define which version of Windows is installed during the initial setup?
+<Details><Summary><h2>How/are we able to define which version of Windows is installed during the initial setup?</h2></Summary>
 
 ImmyBot doesn't install Windows on bare metal. The workflow is you unbox the system from Dell, HP, Lenovo, Microsoft, or your manufacturer of choice and insert the USB with the ImmyBot.ppkg file at the root while the machine is at the out of box screen.
 
 We don't image the machine, we script the factory image into compliance.
 
-We can, however, install Feature Updates during Onboarding (as well as after Onboarding)
+We can, however, install Feature Updates during Onboarding (as well as after Onboarding)</Details>
 
-## Since Immy.Bot doesn’t use an ISO, does it require a device to have the ability to have 2 USB devices plugged in? One for a Windows ISO and one for the ImmyBot ppkg?
+<Details><Summary><h2>Since Immy.Bot doesn’t use an ISO, does it require a device to have the ability <br>to have 2 USB devices plugged in? One for a Windows ISO and one for the ImmyBot ppkg?</h2></Summary>
 
-If you want to wipe the computer you can use the Media Creation Tool to create a Windows Setup flash drive and then put our .ppkg file on it. After installing Windows, it will automatically apply the .ppkg
+If you want to wipe the computer you can use the Media Creation Tool to create a Windows Setup flash drive and then put our .ppkg file on it. After installing Windows, it will automatically apply the .ppkg</Details>
 
-## Does Immy rely on the Windows preboot for drivers during initial deployment, or does the ImmyBot agent installer have drivers?
+<Details><Summary><h2>Does Immy rely on the Windows preboot for drivers during initial deployment, or does the <br>ImmyBot agent installer have drivers?</h2></Summary>
 
-Since we are working with the manufacturer's image, all drivers are typically installed. We will automatically install Dell, HP, and Lenovo driver and BIOS updates via those manufacturer's tools (Dell Command, HP Image Assistant, Lenovo System Update)
+Since we are working with the manufacturer's image, all drivers are typically installed. We will automatically install Dell, HP, and Lenovo driver and BIOS updates via those manufacturer's tools (Dell Command, HP Image Assistant, Lenovo System Update)</Details>
 
-## Does Immy’s setup process support a USB NIC for WiFi?  If so, how do we present those drivers to Immy, or do we even need to?
+<Details><Summary><h2>Does Immy’s setup process support a USB NIC for WiFi?  If so, how do we present <br>those drivers to Immy, or do we even need to?</h2></Summary>
 
-I've found Windows has built in drivers for most USB NICs. If yours doesn't have drivers built into Windows, I'd suggest purchasing one that does.
+I've found Windows has built in drivers for most USB NICs. If yours doesn't have drivers built into Windows, I'd suggest purchasing one that does.</Details>
 
-## SentinelOne - How do we define which site Immy.Bot places the agent in during installation of the S1 agent?
+<Details><Summary><h2>SentinelOne - How do we define which site Immy.Bot places the agent in during installation of the S1 agent?</h2></Summary>
 
-Supply ImmyBot with an API Key to SentinelOne, and Immy will look for a Site in your SentinelOne instance that matches the name of the Tenant you are onboarding the computer for.
+Supply ImmyBot with an API Key to SentinelOne, and Immy will look for a Site in your SentinelOne instance that matches the name of the Tenant you are onboarding the computer for.</Details>
 
-## Are there any repository limits for software deployments?  Either to the size of custom software or number of custom installers we can upload?
+<Details><Summary><h2>Are there any repository limits for software deployments?  Either to the size of custom software or number of custom installers we can upload?</h2></Summary>
 
-There are currently no limits. Everything you upload goes into an Azure Storage Account created just for your ImmyBot instance. Don't be the reason we can't have nice things.
+There are currently no limits. Everything you upload goes into an Azure Storage Account created just for your ImmyBot instance. Don't be the reason we can't have nice things.</Details>
 
-# For computer rename, are there any other operators we can use when naming devices other then the ones shown? Can we add operators?
+<Details><Summary><h2>For computer rename, are there any other operators we can use when naming devices other then the ones shown? Can we add operators?</h2></Summary>
 
-You can duplicate the Task into your instance an manipulate it however you like. If it's something you think other MSPs could use, I'd encourage you to submit a request on the [ImmyBot Community](https://community.immy.bot) and we can add it.
+You can duplicate the Task into your instance an manipulate it however you like. If it's something you think other MSPs could use, I'd encourage you to submit a request on the [ImmyBot Community](https://community.immy.bot) and we can add it.</Details>
 
-## Employee profile caching during on-boarding - is this supported?  If so/how?
+<Details><Summary><h2>Employee profile caching during on-boarding - is this supported?  If so/how?</h2></Summary>
 
 ImmyBot will create a profile for the Primary Person you selected for this machine on the Onboarding screen (It does this via the "Create Profile for Primary Person" task)
 
-We do this so subsequent tasks that set user level settings like default PDF handler and default browser, have the profile for the primary person and thus that user's HKCU where those settings live.
+We do this so subsequent tasks that set user level settings like default PDF handler and default browser, have the profile for the primary person and thus that user's HKCU where those settings live.</Details>
 
-## For purchasing Immy, do you guys prefer Credit card or invoice? Would you rather us pay monthly, or can we pay all upfront?
+<Details><Summary><h2>For purchasing Immy, do you guys prefer Credit card or invoice? Would you rather us pay monthly, or can we pay all upfront?</h2></Summary>
 
-We prefer monthly credit card or ACH.
+We prefer monthly credit card or ACH.</Details>
 
-## Is Immy able to group devices and then do role based deployments to them? I assume this is done by tags?
+<Details><Summary><h2>Is Immy able to group devices and then do role based deployments to them? I assume this is done by tags?</h2></Summary>
 
-Yes, you would accomplish this with tags
+Yes, you would accomplish this with tags</Details>
 
-## BitLocker - does this write the key to Azure AD by chance?
+<Details><Summary><h2>BitLocker - does this write the key to Azure AD by chance?</h2></Summary>
 
 Yes, but we can't verify that it is written to Azure AD as that would require additional privileges that our App Registration doesn't request.
 
-We also write the Bitlocker Recovery Key to Active Directory for Domain Joined machines. This doesn't require any Group Policy setup, or line of site to the domain controller. This works as long as the machine is joined to a domain and there is a domain controller for that domain in ImmyBot.
+We also write the Bitlocker Recovery Key to Active Directory for Domain Joined machines. This doesn't require any Group Policy setup, or line of site to the domain controller. This works as long as the machine is joined to a domain and there is a domain controller for that domain in ImmyBot.</Details>
 
-## Is Immy able to reset Windows / Wipe and Reload a computer?
+<Details><Summary><h2>Is Immy able to reset Windows / Wipe and Reload a computer?</h2></Summary>
 
 Yes, the current process will be simplified but here's how to do it:
 
@@ -203,16 +297,29 @@ Yes, the current process will be simplified but here's how to do it:
 2. Create a Deployment for "Apply Provisioning Package (PPKG)" to deploy the PPKG to the specified machine
 
 ![image](https://user-images.githubusercontent.com/1424395/235902286-5ad3303e-167c-4cd4-abb6-5dea45da3600.png)
+</Details>
 
-## ImmyBot Agent logs show an error of "The specified SAS token is expired"
+<Details><Summary><h2>ImmyBot Agent logs show an error of "The specified SAS token is expired"</h2></Summary>
 
-This will occur if the device's system time is incorrect.  Ensure that the system time is correct and then restart the ImmyBot Agent Service.
+This will occur if the device's system time is incorrect.  Ensure that the system time is correct and then restart the ImmyBot Agent Service.</Details>
 
-## What are trusted manufacturers?
-
+<div>
+    <Details>
+        <Summary>
+            <h2>What are trusted manufacturers?</h2>
+        </Summary>
+        <p>
 Dell, HP, and Lenovo are considered trusted manufacturers.  A trusted manufacturer is expected to provide unique serial numbers for their devices. We rely on trusted manufactuers and device serial numbers during device identification.  If the agent reports it comes from a trusted manufacturer and a computer already exists inside ImmyBot with the same manufacturer and serial number, then we will automatically associated the agent with the existing computer.
+        </p>
+    </Details>
+</div>
 
-## Can I embed the ImmyAgent into an image?
+<div>
+    <Details>
+        <Summary>
+            <h2>Can I embed the ImmyAgent into an image?</h2>
+        </Summary>
+        <p>
 
 Create a PPKG and place it in `C:\Recovery\Customizations`, create the folder if it doesn't exist.
 
@@ -224,10 +331,19 @@ Content of SetupComplete.cmd can be as simple as:
 start C:\Windows\Setup\Scripts\ImmyAgentInstallerBundle.exe /qn
 
 A member of the ImmyBot community also likes to use the below method to embedded a PPKG into an image:
-```
-DISM.exe /Image:D:\mount /Add-ProvisionedAppxPackage /PackagePath:C:\Users\Moi\Downloads\ImmyBotAgentInstaller.ppkg
+```cmd
+DISM.exe /Image:D:\mount /Add-ProvisioningPackage /PackagePath:C:\Users\<User>\Downloads\ImmyBotAgentInstaller.ppkg
 ```
 
-## Do you take requests for features/software/tasks/scripts?
+</p>
+    </Details>
+</div>
 
-Yes, please feel welcome to submit a request on the [ImmyBot Community](https://community.immy.bot)
+<div>
+    <Details>
+        <Summary>
+            <h2>Do you take requests for features/software/tasks/scripts?</h2>
+        </Summary>
+        <p>Yes, please feel welcome to submit a request on the [ImmyBot Community](https://community.immy.bot)</p>
+    </Details>
+</div>
